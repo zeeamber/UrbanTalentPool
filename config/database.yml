@@ -80,6 +80,32 @@ test:
 #
 production:
   <<: *default
-  database: UrbanTalentPool_production
+  database: urban_talent_pool_prod
   username: UrbanTalentPool
   password: <%= ENV['URBANTALENTPOOL_DATABASE_PASSWORD'] %>
+
+
+development:
+  <<: *default
+  database: urban_talent_pool_dev
+  host: localhost
+  username: postgres
+  password: ''
+
+test:
+  <<: *default
+  database: urban_talent_pool_test
+  host: localhost
+  username: <%= ENV['DATABASE_USER_NAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+
+production:
+  <<: *default
+  database: urban_talent_pool_prod
+  username: <%= ENV['DATABASE_USER_NAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: localhost
+  port: 6544
+
+
+
