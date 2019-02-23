@@ -1,0 +1,2 @@
+class ProfessionalSkillsMap < ApplicationRecord
+end
