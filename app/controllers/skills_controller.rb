@@ -6,5 +6,7 @@ class SkillsController < ApplicationController
   end
 
   def create
+    skill = Skill.find_or_create_by(name: params[:skill][:name])
+    render json: { success: true }
   end
 end
